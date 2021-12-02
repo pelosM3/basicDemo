@@ -1,0 +1,307 @@
+/* Hoja de estilos que se funciona en toda la aplicacion 
+ *(pero no dentro de los shadow-root de los WebComponets, para eso usar 'common-styles.css')
+ */
+
+/** Dialogo de carga */
+.v-loading-indicator {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: auto;
+  animation: fadein 0.3s ease-out 0.2s normal 1 both;
+  z-index: 2147483647;
+}
+@keyframes fadein {
+  0% {
+    background: rgba(0,0,0,0);
+  }
+  100% {
+    background: rgba(0,0,0,.5);
+  }
+}
+.v-loading-indicator:before {
+	width: 76px;
+	height: 76px;
+	
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	
+	margin: -38px 0 0 -38px;
+	
+	border-radius: 100%;
+	animation: bouncedelay 1.1s infinite 0s ease-in-out both;
+	content: "";
+}
+
+.v-loading-indicator.first:before {
+	background-color: skyblue;
+}
+.v-loading-indicator.second:before {
+	background-color: gold;
+}
+.v-loading-indicator.third:before {
+	background-color: salmon;
+}
+@keyframes bouncedelay {
+  0%, 80%, 100% {
+    transform: scale(0);
+  } 40% {
+    transform: scale(1.0);
+  }
+}
+.v-loading-indicator:after {
+	content: "Por favor, espere...";
+	font-weight: bold;
+	 
+	width: 160px;
+	height: 160px;
+	margin: -80px 0 0 -80px;
+	background-image: url('images/loader.gif');
+	background-repeat: no-repeat;
+	background-position: center center;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+}
+.v-loading-indicator.first:after {
+  color: skyblue;
+}
+.v-loading-indicator.second:after {
+  color: gold;
+}
+.v-loading-indicator.third:after {
+  color: salmon;
+}
+
+
+.caja-borde {
+	border: 1px solid var(--lumo-primary-color-50pct);
+	border-radius: 10px;
+	margin-bottom: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+}
+
+.etiqueta {
+	border-radius: var(--lumo-border-radius);
+	padding: 2px 10px;
+}
+
+vaadin-tab.tab-borde {
+  border-left: 1px solid var(--lumo-primary-color-10pct);
+  border-right: 1px solid var(--lumo-primary-color-10pct);
+}
+vaadin-tab.tab-borde:hover {
+  background-color: var(--lumo-primary-color-10pct);
+}
+vaadin-tab[selected].tab-borde:before {
+  width: 100%;
+  height: 3px;
+}
+
+/* Estilos para elementos contenidos en un menu desplegable */
+/* Sin margen por la derecha*/
+vaadin-context-menu-list-box .menu-desplegable.vaadin-menu-item {
+	padding-right: 0;
+}
+/* Con margen por todos lados */
+vaadin-context-menu-list-box .menu-desplegable-margen.menu-desplegable.vaadin-menu-item {
+	margin-right: var(--lumo-space-m);
+	margin-left: var(--lumo-space-m);
+}
+vaadin-context-menu-list-box .menu-desplegable-margen.menu-desplegable.vaadin-menu-item:first-child {
+	margin-top: var(--lumo-space-m);
+}
+vaadin-context-menu-list-box .menu-desplegable-margen.menu-desplegable.vaadin-menu-item:last-child {
+	margin-bottom: var(--lumo-space-m);
+}
+/* Sin cambiar de fondo cuando se pasa el cursor por encima */
+vaadin-context-menu-list-box .menu-desplegable.vaadin-menu-item:hover {
+  background-color: initial;
+}
+/* Ancho ampliado */
+vaadin-context-menu-overlay vaadin-context-menu-list-box .menu-desplegable.vaadin-menu-item {
+	width: 500px;
+}
+vaadin-context-menu-overlay[phone] vaadin-context-menu-list-box .menu-desplegable.vaadin-menu-item {
+	width: 100%;
+}
+
+.error-background {
+  color: var(--lumo-error-color);
+  background-color: var(--lumo-error-color-10pct);
+}
+.error-background-contrast {
+  color: var(--lumo-error-contrast-color);
+  background-color: var(--lumo-error-color);
+}
+
+.success-background {
+  color: var(--lumo-success-color);
+  background-color: var(--lumo-success-color-10pct);
+}
+.success-background-contrast {
+  color: var(--lumo-success-contrast-color);
+  background-color: var(--lumo-success-color);
+}
+
+.primary-background {
+  color: var(--lumo-primary-color);
+  background-color: var(--lumo-primary-color-10pct);
+}
+.primary-background-contrast {
+  color: var(--lumo-primary-contrast-color);
+  background-color: var(--lumo-primary-color);
+}
+
+.gold-background {
+  color: var(--gold-color);
+  background-color: var(--gold-color-10pct);
+}
+.gold-background-contrast {
+  color: var(--gold-contrast-color);
+  background-color: var(--gold-color);
+}
+
+.blue-background {
+  color: var(--blue-color);
+  background-color: var(--blue-color-10pct);
+}
+.blue-background-contrast {
+  color: var(--blue-contrast-color);
+  background-color: var(--blue-color);
+}
+
+.grey-background {
+  color: var(--grey-color);
+  background-color: var(--grey-color-10pct);
+}
+.grey-background-contrast {
+  color: var(--grey-contrast-color);
+  background-color: var(--grey-color);
+}
+
+.icono-redondo{
+	border-radius: 100%;
+ 	flex-shrink: 0;
+ 	height: var(--lumo-size-s);
+ 	margin-right: var(--lumo-space-m);
+    vertical-align: middle;
+ 	width: var(--lumo-size-s);
+}
+/* Para pantallas pequeñas: */
+@media (max-width: 800px) {
+	/* Quitamos el margen derecho en el boton de usuario (no va a tener texto) */
+	.icono-redondo{
+ 		margin-right: 0;
+	}
+	/* Quitamos el margen al boton del menu lateral */
+	vaadin-drawer-toggle {
+		margin: 0;
+	}
+}
+
+.paciente-sin-informes{
+	color: RED;
+}
+
+.paciente-ing-hoy{
+	color: ORANGE;
+	font-weight: bold;
+}
+
+.paciente-con-alta{
+	color: GREEN;
+	font-weight: bold;
+}
+
+.paciente-pendiente-hosp{
+	color: MAGENTA;
+	font-weight: bold;
+}
+
+.paciente-alta-cancelada{
+	color: ORANGE;
+	font-weight: bold;
+}
+
+.paciente-borrado{
+	text-decoration-line: line-through;
+	font-weight: bold;
+}
+
+.paciente-alta-admin{
+	background-color: rgb(181, 221, 164);
+}
+
+.triaje-rojo{
+	background-color: #F97979;
+	width: unset;
+	border-radius: 10px;
+	padding: 0 10px;
+}
+
+.triaje-naranja{
+	background-color: #EAAD5F;
+	width: unset;
+	border-radius: 10px;
+	padding: 0 10px;
+}
+
+.triaje-amarillo{
+	background-color: #E6EA5F;
+	width: unset;
+	border-radius: 10px;
+	padding: 0 10px;
+}
+
+.triaje-azul{
+	background-color: #93D8F9;
+	width: unset;
+	border-radius: 10px;
+	padding: 0 10px;
+}
+
+.triaje-verde{
+	background-color: #93F993;
+	width: unset;
+	border-radius: 10px;
+	padding: 0 10px;
+}
+.triaje-blink{
+	animation: blinking 1s infinite;
+}
+@keyframes blinking{
+	50%	{ background-color: rgba(0,0,0,0);}
+}
+
+:root {
+/*  Para cambiar el color principal */
+/*     --lumo-primary-color: #ca4835; */
+/*  Para cambiar el color de fondo principal */
+	--lumo-base-color: rgb(240, 242, 248);
+
+	--gold-color: rgb(255, 171, 0);
+	--gold-color-50pct: rgba(255, 171, 0, 0.5);
+	--gold-color-10pct: rgba(255, 171, 0, 0.1);
+	--gold-contrast-color: #FFF;
+	
+	--blue-color: hsl(214, 90%, 52%);
+	--blue-color-50pct: hsla(214, 90%, 52%, 0.5);
+	--blue-color-10pct: hsla(214, 90%, 52%, 0.1);
+	--blue-contrast-color: #FFF;
+	
+	--grey-color: rgb(85, 85 ,85);
+	--grey-color-50pct: rgba(85, 85, 85, 0.5);
+	--grey-color-10pct: rgba(85, 85, 85, 0.1);
+	--grey-contrast-color: #FFF;
+	
+
+}
+        
+
+

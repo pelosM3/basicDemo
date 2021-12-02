@@ -1,0 +1,41 @@
+:host([theme~="no-border-dialog"]) [part="overlay"] [part="content"] {
+	padding: 0;
+}
+
+:host([theme~="no-border-dialog"]) [part="overlay"] {
+	border-radius: 0;
+}
+
+:host([theme~="full-screen-dialog"]) [part="overlay"] {
+	width: 99%;
+	height: 99%;
+}
+
+:host([theme~="full-screen-dialog"]) [part="overlay"] [part="content"] {
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	overflow: hidden;
+}
+
+:host([theme~="half-screen-dialog"]) [part="overlay"] {
+	width: 70%;
+	height: 70%;
+}
+
+:host([theme~="half-screen-dialog"]) [part="overlay"] [part="content"] {
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	overflow: hidden;
+}
+
+:host([theme~="error"]) [part="overlay"] {
+	background-color: var(--lumo-error-color);
+	color: var(--lumo-error-contrast-color);
+	--lumo-primary-color: #500;
+	--_lumo-button-background-color: var(--lumo-shade-20pct);
+	--_lumo-button-color: var(--lumo-error-contrast-color);
+	--_lumo-button-primary-background-color: var(--lumo-error-contrast-color);
+	--_lumo-button-primary-color: var(--lumo-error-text-color);
+}

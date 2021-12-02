@@ -1,0 +1,25 @@
+/* Hoja de estilos que se funciona para cada componente (shadow-root de los WebComponets)
+ */
+
+/* componentes de solo lectura con fondo claro */
+:host([readOnly]) [part="input-field"] {
+	background-color: var(--lumo-contrast-5pct) !important;
+}
+
+/* Estilos para elementos contenidos en un menu desplegable */
+/* Sin margen por arriba*/
+:host(.menu-desplegable.vaadin-menu-item) [has-label] {
+	padding-top: 0;
+}
+
+
+/* Para pantallas pequeñas: */
+@media (max-width: 800px) {
+	/* Reducimos el tamaño del espaciado de los menus */
+	:host([theme~="spacing"]) ::slotted(*) {
+		margin-left: 1px;
+	}
+	:host([theme~="spacing"])::before {
+		margin-left: -1px;
+	}
+}

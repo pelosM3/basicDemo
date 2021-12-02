@@ -1,0 +1,25 @@
+/* Para celdas con fondo rojo */
+.error-background {
+  color: var(--lumo-error-color);
+  background-color: var(--lumo-error-color-10pct);
+}
+.error-background-contrast {
+  color: var(--lumo-error-contrast-color);
+  background-color: var(--lumo-error-color);
+}
+
+.fila-paciente-alta-admin{
+	background-color: rgb(181, 221, 164);
+}
+
+/* Color de la cabecera */
+thead tr th[part~="cell"] {
+  background-color: rgb(206, 212, 223);
+  color: var( --lumo-primary-color);
+}
+
+/* Sin espacio entre filas */
+:host(.grid-no-padding) [part~="cell"] ::slotted(vaadin-grid-cell-content) {
+	padding-top: 0px;
+	padding-bottom: 0px;
+}

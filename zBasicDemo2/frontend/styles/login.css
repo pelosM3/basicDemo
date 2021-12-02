@@ -1,0 +1,86 @@
+.login-screen:before {
+	content: '';
+	width: 100%;
+	height: 100%;
+	z-index: -100000;
+	position: fixed;
+	background-image: url('images/estetoscopio.jpg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+}
+
+.pantalla-login {
+	background-color: white;
+	border-radius: 10px;
+	max-width: 60%;
+	height: 80%;
+	min-height: 500px;
+}
+
+.contenedor-formulario-login {
+	height: 100%;
+	width: 300px;
+}
+
+.titulo-login {
+	color: var(--lumo-primary-color);
+	font-weight: bold;
+	font-size: large;
+}
+
+.contenedor-logo-login {
+	background-color: var(--lumo-primary-color);
+	border-left: 1px solid blue;
+	border-radius: 0 10px 10px 0;
+	height: 100%;
+	width: 300px;
+}
+
+.logo-login {
+  padding: 20px;
+}
+
+/* Estilos para el LoginForm de Vaadin */
+/* Ancho al 100% */
+vaadin-login-form-wrapper {
+	max-width: 100%;
+}
+/* Boton con margen izquierdo */
+vaadin-button[part="vaadin-login-submit"] {
+	width: min-content;
+	padding-left: 40px;
+  vertical-align: middle;
+}
+/* Boton con icono */
+vaadin-button[part="vaadin-login-submit"]:before {
+	content: "";
+  top: 25%;
+	margin-left: 10px;
+	opacity: 1;
+	width: 16px;
+	height: 50%;
+	/*background-color: red !important;*/
+	background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' preserveAspectRatio='xMidYMid meet' focusable='false' style='pointer-events: none; display: block; width: 100%; height: 100%;' fill='white'><g><path d='M7 1v2l1 1v-2h7v12h-7v-2l-1 1v2h9v-14z'></path><path d='M10 8l-5-4v2h-5v4h5v2z'></path></g></svg>")  no-repeat;
+}
+
+/* Hace que la pantalla de login se coloque verticalmente en pantallas pequeñas */
+@media (max-width: 800px) {
+
+    .pantalla-login {
+        flex-direction: column-reverse;
+		height: unset;
+    }
+
+	.contenedor-formulario-login {
+		width: 100%;
+		padding: 0px;
+		padding-bottom: 5px;
+	}
+	
+	.contenedor-logo-login {
+  		border-radius: 10px 10px 0 0;
+		width: 100%;
+	}
+}

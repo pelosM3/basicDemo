@@ -1,0 +1,6 @@
+/* Estilos especificos para el componente de Vaadin LoginForm*/
+
+/* Titulo de color */
+section[part="form"] h2[part="form-title"] {
+	color: var(--lumo-primary-color);;
+}
